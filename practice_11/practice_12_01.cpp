@@ -7,7 +7,7 @@
 #include <deque>
 
 
-#define B
+#define A
 
 #ifdef A
 
