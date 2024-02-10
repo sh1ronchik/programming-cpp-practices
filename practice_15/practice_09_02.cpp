@@ -75,13 +75,3 @@ int main() {
 
 
 #endif
-
-#ifdef task_15_2
-
-
-int main() {
-    return 0;
-}
-
-
-#endif
