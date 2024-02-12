@@ -82,13 +82,13 @@ int main() {
 
 #include <iostream>
 #include <vector>
-#include "chess/pieces/include/Piece.h"
-#include "chess/pieces/include/Pawn.h"
-#include "chess/pieces/include/Rook.h"
-#include "chess/pieces/include/Knight.h"
-#include "chess/pieces/include/Bishop.h"
-#include "chess/pieces/include/Queen.h"
-#include "chess/pieces/include/King.h"
+#include "Piece.h"
+#include "Pawn.h"
+#include "Rook.h"
+#include "Knight.h"
+#include "Bishop.h"
+#include "Queen.h"
+#include "King.h"
 
 
 void drawChessBoard(const std::vector<std::vector<Piece*>>& board) {
