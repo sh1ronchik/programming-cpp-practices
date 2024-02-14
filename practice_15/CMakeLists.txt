@@ -4,6 +4,7 @@ project(practice_09_02)
 set(CMAKE_CXX_STANDARD  14)
 
 include_directories(${PROJECT_SOURCE_DIR}/chess/pieces/include)
+include_directories(${PROJECT_SOURCE_DIR}/chess/board/include)
 
 add_executable(chess_program
     chess/pieces/src/Pawn.cpp
@@ -12,5 +13,6 @@ add_executable(chess_program
     chess/pieces/src/Bishop.cpp
     chess/pieces/src/Queen.cpp
     chess/pieces/src/King.cpp
+    chess/board/src/Board.cpp
     practice_09_02.cpp
 )
