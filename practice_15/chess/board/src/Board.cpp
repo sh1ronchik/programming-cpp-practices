@@ -66,6 +66,29 @@ void Board::display() {
     }
 }
 
+void Board::movePiece(const Position& from, const Position& to) {
+    Piece* piece = getPieceAt(from);
+    if (piece != nullptr) {
+        if (!piece->canMoveTo(to.GetRow(), to.GetCol(), board)) {
+            std::cerr << "Invalid move for the piece." << std::endl;
+            return; 
+        }
+
+        setPieceAt(to, piece);
+        setPieceAt(from, nullptr);
+    } else {
+        std::cerr << "No piece at the specified position." << std::endl;
+    }
+}
+
+Piece* Board::getPieceAt(const Position& pos) const {
+    return board[pos.GetRow()][pos.GetCol()];
+}
+
+void Board::setPieceAt(const Position& pos, Piece* piece) {
+    board[pos.GetRow()][pos.GetCol()] = piece;
+}
+
 Board::~Board() {
     for (auto &row : board) {
         for (auto &piece : row) {

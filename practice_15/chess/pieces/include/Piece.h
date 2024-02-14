@@ -11,6 +11,8 @@ public:
     Color getColor() const { return color; }
     int getX() const { return x; }
     int getY() const { return y; }
+    void setX(int x_) { x = x_; }
+    void setY(int y_) { y = y_; }
 
     virtual void display() const =  0;
     virtual bool canMoveTo(int newX, int newY, const std::vector<std::vector<Piece*>>& board) const =  0;

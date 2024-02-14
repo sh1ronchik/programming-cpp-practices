@@ -82,6 +82,8 @@ int main() {
 
 #include <iostream>
 #include <vector>
+#include <string>
+
 #include "Piece.h"
 #include "Pawn.h"
 #include "Rook.h"
@@ -89,11 +91,34 @@ int main() {
 #include "Bishop.h"
 #include "Queen.h"
 #include "King.h"
+#include "Position.h"
 #include "Board.h"
 
 int main() {
     Board chessBoard;
     chessBoard.display();
+
+    std::string move;
+    while (true) {
+        std::cout << "Enter your move (e.g., e2e4) or 'q' to quit: ";
+        std::cin >> move;
+
+        if (move == "q") {
+            break;
+        }
+
+        char srcFile = move[0], srcRank = move[1], destFile = move[2], destRank = move[3];
+        Position from(7 - (srcRank - '1'), srcFile - 'a');
+        Position to(7 - (destRank - '1'), destFile - 'a');
+
+        chessBoard.movePiece(from, to);
+
+        chessBoard.display();
+    }
+
+    std::cout << "Game over. Thank you for playing!" << std::endl;
+
+    return  0;
 }
 
 #endif

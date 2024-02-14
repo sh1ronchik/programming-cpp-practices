@@ -14,5 +14,6 @@ add_executable(chess_program
     chess/pieces/src/Queen.cpp
     chess/pieces/src/King.cpp
     chess/board/src/Board.cpp
+    chess/board/src/Position.cpp
     practice_09_02.cpp
 )
