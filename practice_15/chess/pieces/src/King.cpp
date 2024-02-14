@@ -1,4 +1,4 @@
-#include "../include/King.h"
+#include "King.h"
 #include <iostream>
 
 void King::display() const {
@@ -6,5 +6,5 @@ void King::display() const {
 }
 
 bool King::canMoveTo(int newX, int newY, const std::vector<std::vector<Piece*>>& board) const {
-    return true; 
+    return abs(newX - x) <=  1 && abs(newY - y) <=  1;
 }

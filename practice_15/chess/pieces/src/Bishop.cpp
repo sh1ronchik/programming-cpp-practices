@@ -1,4 +1,4 @@
-#include "../include/Bishop.h"
+#include "Bishop.h"
 #include <iostream>
 
 void Bishop::display() const {
@@ -6,5 +6,5 @@ void Bishop::display() const {
 }
 
 bool Bishop::canMoveTo(int newX, int newY, const std::vector<std::vector<Piece*>>& board) const {
-    return true; 
+    return abs(newX - x) == abs(newY - y);
 }

@@ -1,4 +1,4 @@
-#include "../include/Pawn.h"
+#include "Pawn.h"
 #include <iostream>
 
 void Pawn::display() const {
@@ -6,5 +6,5 @@ void Pawn::display() const {
 }
 
 bool Pawn::canMoveTo(int newX, int newY, const std::vector<std::vector<Piece*>>& board) const {
-    return true; 
+    return newX == x && (newY == y +  1 || newY == y -  1);
 }

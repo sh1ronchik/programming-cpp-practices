@@ -1,4 +1,4 @@
-#include "../include/Queen.h"
+#include "Queen.h"
 #include <iostream>
 
 void Queen::display() const {
@@ -6,5 +6,5 @@ void Queen::display() const {
 }
 
 bool Queen::canMoveTo(int newX, int newY, const std::vector<std::vector<Piece*>>& board) const {
-    return true; 
+    return abs(newX - x) == abs(newY - y) || newX == x || newY == y; 
 }

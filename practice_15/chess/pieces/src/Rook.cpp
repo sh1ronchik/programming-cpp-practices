@@ -1,4 +1,4 @@
-#include "../include/Rook.h"
+#include "Rook.h"
 #include <iostream>
 
 void Rook::display() const {
@@ -6,5 +6,5 @@ void Rook::display() const {
 }
 
 bool Rook::canMoveTo(int newX, int newY, const std::vector<std::vector<Piece*>>& board) const {
-    return true; 
+    return newX == x || newY == y;
 }

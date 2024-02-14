@@ -1,4 +1,4 @@
-#include "../include/Knight.h"
+#include "Knight.h"
 #include <iostream>
 
 void Knight::display() const {
@@ -6,5 +6,5 @@ void Knight::display() const {
 }
 
 bool Knight::canMoveTo(int newX, int newY, const std::vector<std::vector<Piece*>>& board) const {
-    return true; 
+    return (abs(newX - x) ==   2 && abs(newY - y) ==   1) || (abs(newX - x) ==   1 && abs(newY - y) ==   2);
 }
