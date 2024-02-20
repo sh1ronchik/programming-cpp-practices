@@ -96,10 +96,11 @@ int main() {
 
 int main() {
     Board chessBoard;
-    chessBoard.display();
 
     std::string move;
     while (true) {
+        chessBoard.display();
+        
         std::cout << "Enter your move (e.g., e2e4) or 'q' to quit: ";
         std::cin >> move;
 
@@ -112,8 +113,6 @@ int main() {
         Position to(7 - (destRank - '1'), destFile - 'a');
 
         chessBoard.movePiece(from, to);
-
-        chessBoard.display();
     }
 
     std::cout << "Game over. Thank you for playing!" << std::endl;
