@@ -2,29 +2,42 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <cstring> 
+#include <cstring>  
 
 int main(int argc, char* argv[]) {
-    if (argc <   2) {
-        std::cerr << "Usage: " << argv[0] << " [FILE]...\n";
-        return   1;
+    bool numberLines = false;
+    int fileIndex =  1;
+
+    // Check for the -n option
+    if (argc >  1 && std::strcmp(argv[1], "-n") ==  0) {
+        numberLines = true;
+        fileIndex++;
     }
 
-    for (int i =   1; i < argc; ++i) {
+    if (argc < fileIndex +  1) {
+        std::cerr << "Usage: " << argv[0] << " [-n] [FILE]...\n";
+        return  1;
+    }
+
+    for (int i = fileIndex; i < argc; ++i) {
         std::istream* input = nullptr;
-        if (std::strcmp(argv[i], "-") ==   0) {
+        if (std::strcmp(argv[i], "-") ==  0) {
             input = &std::cin;
         } else {
             input = new std::ifstream(argv[i]);
             if (!*input) {
                 std::cerr << "Error: Cannot open file " << argv[i] << '\n';
                 delete input;
-                return   1;
+                return  1;
             }
         }
 
         std::string line;
+        int lineNumber =  1;
         while (std::getline(*input, line)) {
+            if (numberLines) {
+                std::cout << lineNumber++ << ": ";
+            }
             std::cout << line;
             if (!input->eof()) {
                 std::cout << '\n';
@@ -36,5 +49,5 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    return 0;
+    return  0;
 }
