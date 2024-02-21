@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-void readAndOutputFile(const std::string& filename) {
+void print_file(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     }
 
     for (int i =  1; i < argc; ++i) {
-        readAndOutputFile(argv[i]);
+        print_file(argv[i]);
     }
 
     return  0;
